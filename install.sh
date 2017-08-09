@@ -27,5 +27,11 @@ wget https://github.com/drush-ops/drush-launcher/releases/download/0.3.1/drush.p
 chmod +x drush.phar
 sudo mv drush.phar /usr/local/bin/drush
 
+# Update the apache host so we only allow access to the docroot.
+sudo sed -i -e 's,/home/ubuntu/workspace,/home/ubuntu/workspace/docroot,g' /etc/apache2/sites-enabled/001-cloud9.conf
+
+# Restart apache
+/etc/init.d/apache2 restart
+
 # Reinitialize the terminal.
-. ~/.bashrc
+exec bash
