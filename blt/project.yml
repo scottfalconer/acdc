@@ -1,7 +1,7 @@
 project:
-  machine_name: site
-  prefix: BLT
-  human_name: 'BLTed 8'
+  machine_name: acdcace
+  prefix: ACE
+  human_name: 'ACDC - ACE'
   profile:
     name: lightning
   local:
@@ -9,7 +9,8 @@ project:
     hostname: 'local.${project.machine_name}.com'
 git:
   default_branch: master
-  remotes: {  }
+  remotes:
+    - 'acdcace@svn-6796.devcloud.hosting.acquia.com:acdcace.git'
 drush:
   aliases:
     remote: '${project.machine_name}.test'

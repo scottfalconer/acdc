@@ -760,19 +760,9 @@ $settings['file_scan_ignore_directories'] = [
  * Keep this code block at the end of this file to take full effect.
  */
 #
-# if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
-#   include $app_root . '/' . $site_path . '/settings.local.php';
-# }
+if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
+   include $app_root . '/' . $site_path . '/settings.local.php';
+}
 require DRUPAL_ROOT . "/../vendor/acquia/blt/settings/blt.settings.php";
-
-# Move this to a c9 specific settings.php
-$databases['default']['default'] = array(
-    'driver' => 'mysql',
-    'database' => 'c9',
-    'username' => getenv('C9_USER'),
-    'password' => '',
-    'host' => '127.0.0.1',
-    'port' => 3306 );
-
 
 $settings['install_profile'] = 'lightning';

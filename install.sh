@@ -35,3 +35,5 @@ sudo sed -i -e 's,/home/ubuntu/workspace,/home/ubuntu/workspace/docroot,g' /etc/
 
 # Reinitialize the terminal.
 exec bash
+
+blt c9:setup
