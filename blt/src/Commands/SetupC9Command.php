@@ -54,6 +54,7 @@ class SetupC9Command extends BltTasks {
         ->run();
 
       $c9_db_user_string = "'username' => '". getenv('C9_USER') ."'";
+      $this->say('Configuring local.settings.php for user: ' . getenv('C9_USER'));
       $result = $this->taskReplaceInFile($this->projectLocalSettingsFile)
         ->from("'username' => 'drupal'")
         ->to($c9_db_user_string)
